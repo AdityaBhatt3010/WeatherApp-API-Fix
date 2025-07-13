@@ -11,9 +11,8 @@ export default function Home() {
   const [weatherData, setWeatherData] = useState(null);
 
   const getWeather = async () => {
-    const apiKey = '0a5e49c27f2c44c3bb851118251205';
-    const apiUrl = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}`;
-
+    const apiUrl = `/api/weather?location=${location}`;
+    
     if (location) {
       try {
         const res = await fetch(apiUrl);
